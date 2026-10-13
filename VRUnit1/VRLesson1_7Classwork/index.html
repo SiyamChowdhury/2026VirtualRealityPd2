@@ -7,6 +7,13 @@
       <a-assets>
         <img id="texture" src="pacman_maze.jpg" />
       </a-assets>
+      <a-entity>
+        <a-sphere scale = "3 5 3" position = "0 1 0" theta-length = "90" theta-start = "270" color = "red"></a-sphere>
+        <a-circle scale = ".5 .5 .5" position = "1.5 3 1.5"></a-circle> 
+        <a-circle scale = ".25 .25 .25" position = "1.5 3 1.51" color = "black"></a-circle> 
+        <a-circle scale = ".5 .5 .5" position = "-1.5 3 1.5" color = "white"></a-circle>
+        <a-circle scale = ".25 .25 .25" position = "-1.51 3 1.51" color = "black"></a-circle>
+      </a-entity>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="20" height="20" repeat="5 5" src="#texture"></a-plane>
       <a-sky color="black"></a-sky>
     </a-scene>
