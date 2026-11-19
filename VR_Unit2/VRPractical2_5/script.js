@@ -11,18 +11,18 @@
 */
 
 let maze = [
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
-  "----------------------",
+  "----o-x-xxxxxxxxxxx----------------",
+  "------x-----------x-----------",
+  "------x-xxxxxxxxxxx---------------",
+  "------x-x---------------",
+  "---t--x--x---------------",
+  "------x---x-------------",
+  "------x-x--x-------------",
+  "------x-x---x------o------",
+  "------x-xxx--x-----------",
+  "----t-x--x-x-x-------------",
+  "------x--x-x--x-----------",
+  "------xxx---x-x------------",
 ];
 
 /* Challenge 2
@@ -36,11 +36,24 @@ window.addEventListener("DOMContentLoaded",function() {
   for(let r = 0; r < maze.length; r++){
     /* Challenge 3
       Choose a technique to traverse the each character in the string.
-    */ 
+    */
     /* Challenge 4
        Make an appropriate decision based on the characters you chose to enter 
        in the maze.  Create an instance of the corresponding object.
     */
+    let row = maze[r];
+    let cols = row.split("");
+    for(let c = 0; c < cols.length; c++){
+      if(cols[c] == "x"){
+        new Block(c,1,r)
+      }
+      else if(cols[c] == "T"){
+        new Tree(c,1,r);
+      }else if(cols[c]=="o"){
+        new Rock(c,1,r)
+      }
+    }
+
   }
 
 })
